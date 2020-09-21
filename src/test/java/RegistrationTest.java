@@ -59,32 +59,31 @@ public class RegistrationTest {
 
 
         // A - Intro & Registration screen
-////        Registration button
-        WebElement registrationForm = driver.findElement(By.id("ember676"));
+//        Registration button
+//        WebElement registrationForm = driver.findElement(By.id("ember676"));
 //        registrationForm.findElement(By.xpath("div/ul[1]/li[3]/a")).click();
 
+        driver.findElement(By.xpath("/html/body/div[2]/div/div[1]/div/div/div[3]/p/span")).click();
+        // Name
+        driver.findElement(By.id("ember1179")).sendKeys(NAME);
+        // Email
+        driver.findElement(By.id("ember1181")).sendKeys(EMAIL);
+        // pwd
+        driver.findElement(By.id("valPass")).sendKeys(PASSWORD);
+        // pwd verification
+        driver.findElement(By.id("ember1185")).sendKeys(PASSWORD);
+        // Submit verification
+        WebElement registrationForm = driver.findElement(By.id("ember1177"));
+        registrationForm.findElement(By.xpath("button")).click();
 
-//        driver.findElement(By.xpath("/html/body/div[2]/div/div[1]/div/div/div[3]/p/span")).click();
-//        // Name
-//        driver.findElement(By.id("ember1179")).sendKeys(NAME);
-//        // Email
-//        driver.findElement(By.id("ember1181")).sendKeys(EMAIL);
-//        // pwd
-//        driver.findElement(By.id("valPass")).sendKeys(PASSWORD);
-//        // pwd verification
-//        driver.findElement(By.id("ember1185")).sendKeys(PASSWORD);
-//        // Submit verification
-//        WebElement registrationForm = driver.findElement(By.id("ember1177"));
-//        registrationForm.findElement(By.xpath("button")).click();
-//
-//        Assert.assertEquals(driver.findElement(By.id("ember1179")).getAttribute("value"), NAME);
-//        Assert.assertEquals(driver.findElement(By.id("ember1181")).getAttribute("value"), EMAIL);
+        Assert.assertEquals(driver.findElement(By.id("ember1179")).getAttribute("value"), NAME);
+        Assert.assertEquals(driver.findElement(By.id("ember1181")).getAttribute("value"), EMAIL);
 
         // B - HOME SCREEN
         // Logging in
 
         // Closing registration pop-up
-//        driver.findElement(By.id("ember1153")).click();
+        driver.findElement(By.id("ember1153")).click();
         // Entering "כניסה"
         registrationForm.findElement(By.xpath("div/ul[1]/li[3]/a")).click();
 
@@ -93,7 +92,6 @@ public class RegistrationTest {
 
         // Form of Entering BuyMe login button
         driver.findElement(By.id("ember1157")).findElement(By.xpath("button")).click();
-        //
 
         WebElement selectionForm = driver.findElement(By.id("ember731"));
 
